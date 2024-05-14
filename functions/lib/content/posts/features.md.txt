@@ -16,7 +16,7 @@ The features offered by SwiftAce can be categorized into the four sections:
 
 As you can probably tell, a developer will typically also be an admin, and an admin will also have access to all learner features.
 
-Following is a checklist of features that serves as a roadmap for the development of SwiftAce, with ticked checkboxes representing currenlty available features. This page will be updated regularly to reflect the completion status of the listed features.
+The folllowing checklist of features serves as a roadmap for the development of SwiftAce, with ticked boxes representing implemented features and unticked boxes representing planned features.
 
 ### Developer Features
 
@@ -102,6 +102,6 @@ Apart from the above, SwiftAce sites also offer the following features:
 - [ ] Plugins to Extend Functionality
 - [ ] JSON REST API
 
-To suggest new features, please create an issue on the GitHub repository: https://github.com/swiftace-org/swiftace
+This page will be updated regularly to reflect the completion status of the listed features. To suggest new features, please create an issue on the [GitHub repository](https://github.com/swiftace-org/swiftace).
 
 _Last Updated: May 15, 2024_
