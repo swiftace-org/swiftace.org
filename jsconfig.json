@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "./functions",
+    "checkJs": true,
+    "jsxFactory": "jsx",
+    "jsxFragmentFactory": "jsx.Fragment"
+  },
+  "include": ["functions", "typings.d.ts"]
+}

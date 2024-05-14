@@ -1,0 +1,9 @@
+SwiftAce is an open-source course hosting platform that can be self-hosted on [Cloudflare Pages](https://pages.cloudflare.com/). It provides basic LMS functionality and can be customized or whitelabeled to match a company’s brand, design system, etc.
+
+Here's what it looks like:
+
+![](/img/screenshot.png)
+
+SwiftAce can be thought of as a “[Discourse](https://discourse.org/)/[WordPress](https://wordpress.org/) for Online Courses” or an “Open-source [Teachable Alternative](https://alternativeto.net/software/teachable/).” SwiftAce is currently under development and is **NOT** ready for production use.
+
+Development updates and release notes will be added on this page. To self-host SwiftAce, browse the source code, and follow the development, visit the GitHub repository: https://github.com/swiftace-org/swiftace.

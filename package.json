@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "npx wrangler@latest pages dev public --compatibility-date=2023-12-01 --port 2001",
+    "kill": "pid=$(lsof -t -i:2001 -c workerd); [ -n \"$pid\" ] && kill -9 $pid && echo \"PID $pid killed\" || echo \"Nothing to kill\""
+  },
+  "devDependencies": {
+    "marked": "^12.0.0"
+  }
+}
