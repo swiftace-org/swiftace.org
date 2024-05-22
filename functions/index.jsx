@@ -14,6 +14,7 @@ function HomePage() {
       <div>
         <Markdown content={aboutContent} />
       </div>
+
       <div>
         {posts.map((post) => (
           <PostItem {...post} />

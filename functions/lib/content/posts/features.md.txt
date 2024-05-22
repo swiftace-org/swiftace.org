@@ -1,4 +1,4 @@
-<!-- What Can You Do with SwiftAce? -->
+# What Can You Do with SwiftAce?
 
 SwiftAce is an open-source course hosting platform that can be self-hosted on [Cloudflare Pages](https://pages.cloudflare.com). It provides basic LMS functionality and can be customized or whitelabeled to match a company’s brand, design system, etc.
 
@@ -18,7 +18,7 @@ As you can probably tell, a developer will typically also be an admin, and an ad
 
 The folllowing checklist of features serves as a roadmap for the development of SwiftAce, with ticked boxes representing implemented features and unticked boxes representing planned features.
 
-### Developer Features
+## Developer Features
 
 A developer responsible for deploying and managing a self-hosted version of SwiftAce can:
 
@@ -40,7 +40,7 @@ A developer responsible for deploying and managing a self-hosted version of Swif
 - [ ] View/edit all configurations/customizations in a single JSON file
 - [ ] Configure a Google Analytics integration
 
-### Administrator Features
+## Administrator Features
 
 An adminstrator managing courses & learners on a SwiftAce site can:
 
@@ -66,7 +66,7 @@ An adminstrator managing courses & learners on a SwiftAce site can:
 - [ ] View a list of learners who have signed up on the site
 - [ ] Edit and delete learner accounts
 
-### Learner Features
+## Learner Features
 
 A learner looking to take courses on a SwiftAce site can:
 
@@ -88,7 +88,7 @@ A learner looking to take courses on a SwiftAce site can:
 - [ ] Delete their account
 - [ ] View when a course, lesson, or assignment was last updated
 
-### Miscellaneous Features
+## Miscellaneous Features
 
 Apart from the above, SwiftAce sites also offer the following features:
 
