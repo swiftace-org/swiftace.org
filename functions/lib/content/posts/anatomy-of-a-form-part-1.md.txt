@@ -54,7 +54,7 @@ function handleRequest(req, res) {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(renderHtmlPage());
   } else if (req.url === "/styles.css") {
-    // Respond with CSS styles
+    // Respond with a CSS file
     res.writeHead(200, { "Content-Type": "text/css" });
     if (fs.existsSync("styles.css")) res.write(fs.readFileSync("styles.css"));
   } else if (req.url === "/script.js") {
@@ -116,7 +116,7 @@ A real web application will probably use a database like [MySQL](https://www.w3s
 
 ```json
 {
-  "firstName": "John Doe",
+  "fullName": "John Doe",
   "email": "johndoe@example.com",
   "avatarUrl": "https://i.pravatar.cc/250?img=8",
   "bio": ""
@@ -186,11 +186,11 @@ function renderFullNameField(fullNameValue) {
 // Replace characters that disturb the HTML layout
 function escapeHtml(unsafeValue) {
   return unsafeValue
-    .replace("&", "&amp;")
-    .replace("<", "&lt;")
-    .replace(">", "&gt;")
-    .replace('"', "&quot;")
-    .replace("'", "&#039;");
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 ```
 
@@ -354,8 +354,8 @@ Here’s the functionality we have implemented so far:
 
 Note that our "Account Settings" form is currently unstyled and clicking on the "Save Settings" button simply reloads the page without saving the submitted data. We'll add this functionality in the subsequent tutorials:
 
-- In Part 2 of the series, we’ll style the form using CSS rules and add interactivity & client-side validation using JavaScript.
+- In Part 2 of the series (coming soon), we’ll style the form using CSS rules and add interactivity & client-side validation using JavaScript.
 
-- In Part 3 of the series, we’ll process form submissions on the server and redisplay the form with updated data and success/error messages.
+- In Part 3 of the series (coming soon), we’ll process form submissions on the server and redisplay the form with updated data and success/error messages.
 
 The finished code for this tutorial (Part 1 of the series) can be found [here](https://github.com/aakashns/anatomy-of-a-form/tree/main/part1). Stay tuned!
