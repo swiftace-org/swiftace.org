@@ -11,11 +11,11 @@ This series of tutorials offers a step-by-step guide for building robust and use
 5. Process form submissions on the server (in Part 3)
 6. Redisplay form with success/error messages (in Part 3)
 
-This tutorial assumes familiarity with [HTML](https://www.htmldog.com/guides/html/beginner/), [CSS](https://www.htmldog.com/guides/css/beginner/), [JavaScript](https://www.htmldog.com/guides/javascript/) and [Node.js](https://nodejs.org/en). The finished code for this tutorial can be found here: https://github.com/aakashns/anatomy-of-a-form/tree/main/part1.
+This tutorial assumes familiarity with [HTML](https://www.htmldog.com/guides/html/beginner/), [CSS](https://www.htmldog.com/guides/css/beginner/), [JavaScript](https://www.htmldog.com/guides/javascript/) and [Node.js](https://nodejs.org/en). The finished code for this tutorial can be found [here](https://github.com/aakashns/anatomy-of-a-form/tree/main/part1).
 
 <span id="server-setup"></span>
 
-## Set Up a Node.js Web Server
+## Set Up a Web Server Using Node.js
 
 An HTTP web server is a computer program that receives requests from a browser in the form of URLs (web addresses) and responds with HTML pages, CSS styles, JavaScript files, images, etc. [Node.js](https://nodejs.org/) is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps and command line tools using JavaScript.
 
@@ -101,7 +101,7 @@ The web server is now running on your computer, listening for requests on the po
 
 <span id="html-layout"></span>
 
-## Create the Form’s HTML Layout
+## Create the Form’s Layout Using HTML
 
 It’s a good practice to document form fields, their data types, and any constraints/validations they must satisfy before you start building a form. This can also help you decide whether the form should span multiple sections or pages.
 
