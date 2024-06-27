@@ -10,6 +10,8 @@ export function Layout({ title, description, children }) {
         <link rel="stylesheet" href="/css/normalize.css" />
         <link rel="stylesheet" href="/css/markdown.css" />
         <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/prism.css" />
+        <script defer src="/js/prism.js"></script>
         <title>{title}</title>
       </head>
       <body>

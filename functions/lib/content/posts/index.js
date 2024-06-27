@@ -1,5 +1,6 @@
 import featuresContent from "./features.md.txt";
 import authenticationContent from "./authentication.md.txt";
+import form1Content from "./anatomy-of-a-form-part-1.md.txt";
 
 function extractTitle(content) {
   const firstLineBreak = content.indexOf("\n");
@@ -16,6 +17,13 @@ function extractBody(content) {
 }
 
 export const posts = [
+  {
+    slug: "anatomy-of-a-form-part-1",
+    author: "Aakash N S",
+    title: extractTitle(form1Content),
+    date: "Jun 27, 2024",
+    content: extractBody(form1Content),
+  },
   {
     slug: "authentication",
     author: "Aakash N S",
