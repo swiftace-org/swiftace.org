@@ -79,11 +79,11 @@ Here are some notes about the above code:
 
 - The web server responds to the root URL `/` with the [HTTP 200 OK status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200) and a simple HTML page containing the heading "Account Settings" in its body.
 
-  - The HTML source code for the page is created using the helper function `renderHTMLPage` which uses the [template literal syntax](https://chatgpt.com/share/e394546f-4958-4989-8adb-7f6d063ec700) for multiline strings.
+  - The HTML source code for the page is created using the helper function `renderHtmlPage` which uses the [template literal syntax](https://chatgpt.com/share/e394546f-4958-4989-8adb-7f6d063ec700) for multiline strings.
 
   - The HTML page references the URL `/styles.css` for applying styles using CSS and the URL `/script.js` for adding interactivity to the page using JavaScript.
 
-- The web server respond to the URLs `/styles.css` and `/script.js` with the contents of the files `styles.css` and `script.js` respectively (if the files exist). We’ll create these files in Part 2 of the series.
+- The web server respond to the URLs `/styles.css` and `/script.js` with the contents of the files `styles.css` and `script.js` respectively (if these files exist). We’ll create these files in Part 2 of the series.
 
 - The web server responds all URLs other than `/` , `/styles.css`, and `/script.js` with a [HTTP 404 Not Found status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) and a "Not Found" message.
 
@@ -93,7 +93,7 @@ You’ll need to [install Node.js](https://nodejs.org/en/download) on your compu
 
     npx nodemon index.js
 
-The above command uses the [nodemon package](https://www.npmjs.com/package/nodemon) to automatically restart the server every time we make changes to the file `index.js`. You can also run the server using the command `node index.js`, but you’ll have to shut down and restart the server for code change.
+The above command uses the [nodemon package](https://www.npmjs.com/package/nodemon) to automatically restart the server every time we make changes to the file `index.js`. You can also run the server using the command `node index.js`, but you’ll have to manually shut down and restart the server for every code change.
 
 The web server is now running on your computer, listening for requests on the port 8080. You can open up the URL http://localhost:8080 in a browser to view the HTML page:
 
