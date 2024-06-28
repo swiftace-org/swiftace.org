@@ -160,7 +160,7 @@ Here are some notes about the above code:
 
   - The form contains a button for submitting a response, created using an `input` tag with `type` set to `"submit"`. Its label is specified using the `value` attribute.
 
-- `renderForm` invokes helper functions (defined below) for creating specific form fields using the template literal [string interpolation syntax](https://chatgpt.com/share/e118d0aa-21fc-4101-b055-34217bf6a54f) . Values from `initialValues` is passed into the respective helper functions (e.g. `initialValues.email` is passed into `renderEmailField`).
+- `renderForm` invokes helper functions (defined below) for creating specific form fields using the template literal [string interpolation syntax](https://chatgpt.com/share/e118d0aa-21fc-4101-b055-34217bf6a54f) . Values from `initialValues` are passed into the respective helper functions (e.g. `initialValues.email` is passed into `renderEmailField`).
 
 ### Form Field 1 - Full Name
 
