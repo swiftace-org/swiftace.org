@@ -76,7 +76,7 @@ I’m convinced that deploying to cloud VMs is the right choice for SwiftAce. Th
 
 The real benefit of serverless platforms is the ease of deployment and low maintenance overhead. For a self-hosted application, I feel deployment and maintenance can be simplified using automation scripts and daemons <a href="#note-12">[12]</a> without the additional cost and complexity.
 
-Having talked the talk, I now intend to walk the walk and find out how much performance and scale I can extract out of a plain old cloud VM. At some point, I hope to stress test both the setups and report the findings. I hope you found this article helpful.
+Having talked the talk, I now intend to walk the walk and find out how much performance and scale I can extract out of a plain old cloud VM. I hope you found this article helpful.
 
 ### Footnotes
 
