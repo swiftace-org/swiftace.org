@@ -23,8 +23,4 @@ I feel these criteria are necessary for SwiftAce to succeed as an open-source pr
 
 6. **Extensive Documentation:** We'll provide comprehensive guides, tutorials, and API references to deploy, customize, and extend SwiftAce. This will reduce support requests, encourage community contributions, and help users fully leverage the platform's capabilities. We'll publish detailed technical articles & tutorials ([example](https://swiftace.org/posts/anatomy-of-a-form-part-1)) to encourage contributions.
 
-Some of the above adds a significant overhead in terms of development time, and some are hard engineering challenges that will require some learning and experimentation.I might revisit some of these goals if chances of failure (or giving up) are high.
-
-So far, I've made significant progress w.r.t the initial data model, system architecture, technical stack, user authentication, and unit testing. There's some more learning and experimentation I need to do, to ensure I'm building on a solid foundation.
-
-With these principles guiding the development of SwiftAce, I'm hoping to creating a platform that can grow and scale to stand the test of time.
+Some of the above add a significant overhead in terms of development time, and some are hard engineering challenges that will require some learning and experimentation.I might revisit some of these goals if chances of failure (or giving up) are high.
