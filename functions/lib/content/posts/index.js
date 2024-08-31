@@ -1,7 +1,8 @@
 import featuresContent from "./features.md.txt";
 import authenticationContent from "./authentication.md.txt";
 import form1Content from "./anatomy-of-a-form-part-1.md.txt";
-import ditchingServerlessContent from './ditching-serverless.md.txt';
+import ditchingServerlessContent from "./ditching-serverless.md.txt";
+import designPrinciplesContent from "./design-principles.md.txt";
 
 function extractTitle(content) {
   const firstLineBreak = content.indexOf("\n");
@@ -19,10 +20,17 @@ function extractBody(content) {
 
 export const posts = [
   {
+    slug: "design-principles",
+    author: "Aakash N S",
+    title: extractTitle(designPrinciplesContent),
+    date: "Aug 31, 2024",
+    content: extractBody(designPrinciplesContent),
+  },
+  {
     slug: "ditching-serverless",
     author: "Aakash N S",
     title: extractTitle(ditchingServerlessContent),
-    date: "Aug 29, 2024",
+    date: "Aug 28, 2024",
     content: extractBody(ditchingServerlessContent),
   },
   {
