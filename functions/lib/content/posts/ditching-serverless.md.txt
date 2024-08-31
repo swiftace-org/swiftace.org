@@ -58,8 +58,6 @@ Even if each CPU only serves one request at a time, with an average processing t
 
 These estimates are extremely conservative. A typical Node.js application can serve dozens (often hundreds) of requests concurrently, and request processing time is well under 100ms. The cloud VM should be able to handle a 3-5x spike in traffic without much degradation.
 
-A cloud VM might need to be restarted in the event of a crash. Some form of monitoring (e.g. [UptimeRobot](https://uptimerobot.com/)) and automated rebooting mechanism might be necessary. We might also need to set up regular disk [backups/snapshots](https://docs.hetzner.com/cloud/servers/backups-snapshots/overview/) to recover from catastrophic failures.
-
 ## Scaling and Portability
 
 Automatic scaling is one of the primary selling points of serverless platforms. However, most real-world applications will rarely (if ever) need to be scaled automatically by more than 2x. A bigger consideration, in my opinion, is portability i.e. moving your app to a different platform.
@@ -69,6 +67,8 @@ Once your app is running on a serverless platform with proprietary services for 
 With cloud VMs, switching providers or scaling can be as simple as copying over a `data` folder (containing the database and uploaded files) into a bigger VM. Platforms like Hetzner often allow scaling up existing VMs while retaining the hard disk and IP address.
 
 The largest VM on Hetzner offers 48 vCPUs, 192 GB RAM, and 960 GB of disk space. It might be able to **support up to 250k daily active users** <a href="#note-10">[10]</a>. Most deployments will never need to scale beyond a single cloud VM <a href="#note-11">[11]</a>, and a [free CDN](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/) can be used to ease the load.
+
+A cloud VM might need to be restarted in the event of a crash. Some form of monitoring (e.g. [UptimeRobot](https://uptimerobot.com/)) and automated rebooting mechanism might be necessary. We might also need to set up regular disk [backups/snapshots](https://docs.hetzner.com/cloud/servers/backups-snapshots/overview/) to recover from catastrophic failures.
 
 ## Conclusion
 

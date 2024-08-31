@@ -1,8 +1,14 @@
 import { marked } from "marked";
 
+const renderer = new marked.Renderer();
+
+renderer.checkbox = function (checked) {
+  return '<input type="checkbox" ' + (checked ? " checked" : "") + ">";
+};
+
 export function parseMarkdown(content) {
   const MARKDOWN_BAD_CHARS = /^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/;
-  return marked.parse(content.replace(MARKDOWN_BAD_CHARS, ""));
+  return marked.parse(content.replace(MARKDOWN_BAD_CHARS, ""), { renderer });
 }
 
 function escapeHTML(str) {
