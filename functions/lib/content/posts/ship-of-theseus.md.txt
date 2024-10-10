@@ -49,7 +49,7 @@ export default { foo };
 Finally, let's create a file `main.mjs` that serves as the entry point for the program, and simply invokes the `foo` function defined above:
 
 ```javascript
-// main.js
+// main.mjs
 
 import usage from './usage.mjs';
 
@@ -59,7 +59,7 @@ usage.foo();
 We can now execute the program using Node.js:
 
 ```shell
-$ node main.js
+$ node main.mjs
 4
 ```
 
@@ -126,7 +126,7 @@ I plan to use the Ship of Theseus approach to make every part of SwiftAce replac
 
 ### Footnotes
 
-1. <a id="note-1"></a> A similar design is possible with Python, Ruby, Lua, and several other languages. The only requirement is the ability to hot swap modules, functions, and variable at run time.
+1. <a id="note-1"></a> A similar design is possible with Python, Ruby, Lua, and several other languages. The only requirement is the ability to hot swap modules, functions, and variables at run time.
 
 2. <a id="note-2"></a> The `.mjs` file extension allows the usage of JavaScript [ES module imports](https://nodejs.org/api/esm.html) instead of `require` within Node.js applications.  
 
