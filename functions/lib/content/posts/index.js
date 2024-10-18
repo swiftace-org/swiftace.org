@@ -5,6 +5,7 @@ import ditchingServerlessContent from "./ditching-serverless.md.txt";
 import designPrinciplesContent from "./design-principles.md.txt";
 import shipOfTheseusContent from "./ship-of-theseus.md.txt";
 import howToWriteAFunctionContent from './how-to-write-a-function.md.txt';
+import denoContent from './switching-to-deno.md.txt';
 
 function extractTitle(content) {
   const firstLineBreak = content.indexOf("\n");
@@ -21,6 +22,13 @@ function extractBody(content) {
 }
 
 export const posts = [
+  {
+    slug: "switching-to-deno",
+    author: "Aakash N S", 
+    title: extractTitle(denoContent),
+    date: "Oct 18, 2024",
+    content: extractBody(denoContent),
+  },
   {
     slug: "how-to-write-a-function",
     author: "Aakash N S",
