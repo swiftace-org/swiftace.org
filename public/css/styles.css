@@ -1,5 +1,5 @@
 body {
-  background-color: #000;
+  background-color: #080808;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -50,7 +50,7 @@ body {
 }
 
 .post-item {
-  margin-top: 32px;
+  margin-top: 24px;
 
   & .post-title {
     font-size: 20px;
@@ -59,12 +59,14 @@ body {
     margin-bottom: 8px;
 
     & .post-title-link {
-      text-decoration: none;
+      text-decoration: underline;
+      text-decoration-color: rgb(243 243 246 / 30%);
       color: rgb(243 244 246);
     }
 
     & .post-title-link:hover {
       color: rgb(209 213 219);
+      text-decoration-color: rgb(209 213 219 / 50%);
     }
   }
 
