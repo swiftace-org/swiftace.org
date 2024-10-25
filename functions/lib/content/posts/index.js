@@ -28,7 +28,7 @@ export const posts = [
     slug: "jsx-runtime-part-1",
     author: "Aakash N S",
     title: extractTitle(jsxPart1Content),
-    date: "Oct 24, 2024",
+    date: "Oct 25, 2024",
     content: extractBody(jsxPart1Content),
   },
   {
