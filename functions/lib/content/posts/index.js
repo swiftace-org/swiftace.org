@@ -4,15 +4,17 @@ import form1Content from "./anatomy-of-a-form-part-1.md.txt";
 import ditchingServerlessContent from "./ditching-serverless.md.txt";
 import designPrinciplesContent from "./design-principles.md.txt";
 import shipOfTheseusContent from "./ship-of-theseus.md.txt";
-import howToWriteAFunctionContent from './how-to-write-a-function.md.txt';
-import denoContent from './switching-to-deno.md.txt';
+import howToWriteAFunctionContent from "./how-to-write-a-function.md.txt";
+import denoContent from "./switching-to-deno.md.txt";
+import jsxPart1Content from "./jsx-runtime-part-1.md.txt";
 
 function extractTitle(content) {
   const firstLineBreak = content.indexOf("\n");
   const firstLine = content.substr(0, firstLineBreak).trim();
   if (!firstLine) throw new Error("First line must not be empty");
-  if (!firstLine.startsWith("# "))
+  if (!firstLine.startsWith("# ")) {
     throw new Error("First line must start with '# '");
+  }
   return firstLine.substr(2);
 }
 
@@ -23,8 +25,15 @@ function extractBody(content) {
 
 export const posts = [
   {
+    slug: "jsx-runtime-part-1",
+    author: "Aakash N S",
+    title: extractTitle(jsxPart1Content),
+    date: "Oct 25, 2024",
+    content: extractBody(jsxPart1Content),
+  },
+  {
     slug: "switching-to-deno",
-    author: "Aakash N S", 
+    author: "Aakash N S",
     title: extractTitle(denoContent),
     date: "Oct 18, 2024",
     content: extractBody(denoContent),
@@ -34,11 +43,11 @@ export const posts = [
     author: "Aakash N S",
     title: extractTitle(howToWriteAFunctionContent),
     date: "Oct 14, 2024",
-    content: extractBody(howToWriteAFunctionContent), 
+    content: extractBody(howToWriteAFunctionContent),
   },
   {
     slug: "ship-of-theseus",
-    author:"Aakash N S",
+    author: "Aakash N S",
     title: extractTitle(shipOfTheseusContent),
     date: "Sep 30, 2024",
     content: extractBody(shipOfTheseusContent),
