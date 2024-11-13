@@ -1,0 +1,158 @@
+# How to Deploy a Web App to a Cloud VM
+
+There are several managed services like Render, Vercel, and Netlify for deploying web apps to the cloud with little to no effort. However, deploying to simple Linux-based cloud virtual machines (VMs) can be a [faster, cheaper, and more portable](/posts/ditching-serverless) option. It's just a bit more work.
+
+Let's walk through the process of deploying a web application to a cloud VM step-by-step. Along the way, we'll also discuss best practices for ensuring the security and reliability of your application. This tutorial assumes basic knowledge of Linux and command line tools<sup>[[1]](#note-1)</sup>.
+
+Here are the steps we'll follow:
+
+1. Create an SSH Key Pair
+2. Rent a Cloud VM
+3. Connect a Domain
+4. SSH into the VM
+5. Set Up your Web App
+6. Create a System Service
+7. Set Up a Network Firewall
+8. Reverse Proxy with HTTPS
+
+_**NOTE:** You can replace `webapp` in the steps below with a more specific name e.g. `my-blog`._
+
+## 1. Create an SSH Key Pair
+
+We'll use a command line tool called [SSH (Secure Shell)](https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys) to connect with and operate a cloud VM remotely from a local machine (e.g. your laptop). While we can log in to a cloud VM via SSH using a username and password, using an SSH key pair<sup>[[2]](#note-2)</sup> is a more secure method.
+
+Let's generate a new SSH key pair on our local machine. Open up a new terminal on Linux, macOS, or Windows WSL and run the following command (without the `$` at the start):
+
+```bash
+$ ssh-keygen -t ed25519 -f ~/.ssh/webapp -C "webapp"
+```
+
+You'll be prompted to enter an optional passphrase to encrypt the private key, adding yet another layer of security. If you set one, you'll be asked to enter it every time you use the key.
+
+Let's verify that the key pair was created in the directory `~/.ssh` using the `ls` command:
+
+```bash
+$ ls ~/.ssh
+
+webapp  webapp.pub
+```
+
+Two files are created in `~/.ssh`: a private key `webapp`, and a public key `webapp.pub`.
+
+## 2. Rent a Cloud VM
+
+You can rent cloud VMs on platforms like [Hetzner Cloud](https://www.hetzner.com/cloud/) and [DigitalOcean](https://www.digitalocean.com/pricing/droplets) for under $5 per month. Even the cheapest VM on Hetzner (2 CPU cores, 4 GB RAM, and 40 GB disk space) can comfortably supports up to 10,000 daily active users for a typical web application<sup>[[3]](#note-3)</sup>.
+
+While configuring the VM, make sure to enable the assignment of a public IPv4 address<sup>[[4]](#note-4)</sup> and select "SSH Key" as the authentication method (instead of a "root" user password). To view the public key created earlier, run the following command on your local machine:
+
+```bash
+$ cat ~/.ssh/webapp.pub
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO2TIn2kyfSfBCUlSr6CNgrYTarqEUoCy1gEeC14qqmx webapp
+```
+
+Copy the public key and paste it into the "Add SSH Key" dialog on Hetzner as follows<sup>[[5]](#note-5)</sup>:
+
+![ssh-key](https://i.imgur.com/AYNNoFd.png)
+
+All other settings can be left in their default state (they can be changed later as needed). Once the machine is created and running, copy or note down its public IPv4 address:
+
+![ipv4](https://i.imgur.com/kun3ulM.png)
+
+## 3. Connect a Domain
+
+You can purchase a domain name (e.g. "yourdomain.com") for your web application from domain registrars like [Namecheap](https://www.namecheap.com/), [GoDaddy](godaddy.com/), or [Cloudflare](https://domains.cloudflare.com/). Once purchased, you can add a DNS `A record`<sup>[[6]](#note-6)</sup> to point the domain (or a subdomain) to the IP address of the cloud VM.
+
+![dns-record](https://i.imgur.com/SXIWNLe.png)
+
+Make sure it’s a straight DNS pointer, without a proxy. Also make sure to delete conflicting `A` or `CNAME` records, if any. Check your registrar's website for more detailed instructions. Run the `host` command on your local machine to check if your domain points to the right IP:
+
+```bash
+$ host yourdomain.com
+
+yourdomain.com has address 48.13.135.0
+```
+
+_Replace `yourdomain.com` above and hereafter with the domain name you've configured._
+
+## 4. SSH into the VM
+
+We've successfully created a cloud VM, added an SSH public key to it, and configured a domain to point to its IP address. We can now log in to the VM via SSH using the private key created earlier. Just run the following command in a terminal on your local machine:
+
+```bash
+$ ssh -i ~/.ssh/webapp root@yourdomain.com
+```
+
+You'll be presented with the message: `Are you sure you want to continue connecting?`. Type `yes` and press Enter/Return to continue. You're now remotely logged in to the cloud VM as the `root` user, and the `$` prompt changes to `#`. Try executing the `pwd` command:
+
+```bash
+# pwd
+
+/root
+```
+
+Use the `exit` command to log out, and run the SSH command shown above to log back in.
+
+## 5. Set Up your Web App
+
+You can set up any kind of web application. In this case though, we'll create a nextjs application. First, let's install Node.js and NPM.
+
+```bash
+# apt install nodejs npm
+```
+
+TODO - something about cloning a project
+
+```bash
+# git clone https://github.com/aakashns/nextjs-starter.git webapp
+```
+
+You might be asked to provide your GitHub username and a personal access token, if the repository is private.
+
+Next, let's enter the directory and build the project:
+
+```bash
+# cd webapp && npm run build
+```
+
+The project is now ready to run, using the command `next start`. However, instead of running it directly, we will set it up a a system service that runs in the background, and automatically restarts if the app crashes or the system reboots.
+
+## 6. Create a System Service
+
+TODO - Show how to create `systemd` service (with logging etc.)
+
+## 7. Set Up a Network Firewall
+
+TODO - firewall setup instructions
+
+## 8. Reverse Proxy with HTTPS
+
+TODO - Show simplest certificate setup
+
+## Troubleshooting
+
+Show common failure cases here
+
+- dns record not working
+
+- lost your private key
+
+- something about docker
+
+## Conclusion
+
+TODO - add summary and conclusion here (talk about maintenance, monitoring etc.)
+
+### Footnotes
+
+1. <a id="note-1"></a> Note 1 - Tutorial for Linux command line
+
+2. <a id="note-2"></a> Note 2 - Talk about SSH key pair
+
+3. <a id="note-3"></a> Note 3 - Show DAU calculation
+
+4. <a id="note-4"></a> Note 4 - Public IPv4 addresses (limited, chargeable)
+
+5. <a id="note-5"></a> SSH key on digital ocean (copy the file to Desktop)
+
+6. <a id="note-6"></a> Talk about DNS A records etc.
