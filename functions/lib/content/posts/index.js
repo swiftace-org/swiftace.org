@@ -7,7 +7,7 @@ import shipOfTheseusContent from "./ship-of-theseus.md.txt";
 import howToWriteAFunctionContent from "./how-to-write-a-function.md.txt";
 import denoContent from "./switching-to-deno.md.txt";
 import jsxPart1Content from "./jsx-runtime-part-1.md.txt";
-import deployWebAppsContent from "./deploy-web-apps.md.txt";
+import deployWebAppContent from "./deploy-web-app.md.txt";
 
 function extractTitle(content) {
   const firstLineBreak = content.indexOf("\n");
@@ -28,9 +28,9 @@ export const posts = [
   {
     slug: "deploy-web-apps",
     author: "Aakash N S",
-    title: extractTitle(deployWebAppsContent),
+    title: extractTitle(deployWebAppContent),
     date: "Nov 12, 2024",
-    content: extractBody(deployWebAppsContent),
+    content: extractBody(deployWebAppContent),
   },
   {
     slug: "jsx-runtime-part-1",

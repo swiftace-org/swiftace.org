@@ -97,3 +97,7 @@ body {
 pre.language-javascript {
   margin: 1em 0 !important;
 }
+
+pre.language-bash {
+  margin: 1em 0 !important;
+}
