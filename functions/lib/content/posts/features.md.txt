@@ -1,5 +1,7 @@
 # What Can You Do with SwiftAce?
 
+_**NOTE**: This features list is out of date, and will be updated in the future._
+
 [SwiftAce](https://swiftace.org) is an (upcoming) open-source platform for hosting online courses. It can be customized, white-labeled, and self-hosted on a custom domain. It intends to serve independent online educators looking to share their knowledge and expertise.
 
 ![](/img/screenshot.png)

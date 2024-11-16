@@ -29,7 +29,7 @@ export const posts = [
     slug: "deploy-web-apps",
     author: "Aakash N S",
     title: extractTitle(deployWebAppContent),
-    date: "Nov 12, 2024",
+    date: "Nov 16, 2024",
     content: extractBody(deployWebAppContent),
   },
   {
