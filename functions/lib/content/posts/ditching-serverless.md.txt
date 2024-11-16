@@ -4,7 +4,7 @@
 
 I’ve been developing SwiftAce as a web app targeting [Cloudflare Workers](https://workers.cloudflare.com) as the deployment platform. It’s a serverless JavaScript runtime with associated services for [file storage](https://developers.cloudflare.com/r2/), [key-value stores](https://developers.cloudflare.com/kv/), and [relational databases](https://developers.cloudflare.com/d1/). Vercel, Netlify & AWS Lambda offer similar services.
 
-However, I’ve decided to ditch Cloudflare in favor of deploying to simple Linux-based cloud virtual machines (VMs) on platforms like [Hetzner](https://hetzner.com), Digital Ocean, and AWS EC2. I've found that deploying to cloud VMs will make the application faster, cheaper, and more reliable <a href="#note-1">[1]</a>.
+However, I’ve decided to ditch Cloudflare in favor of deploying to simple Linux-based cloud virtual machines (VMs) on platforms like [Hetzner](https://hetzner.com), Digital Ocean, and AWS EC2. I've found that deploying to cloud VMs will make the application faster, cheaper, and more portable <a href="#note-1">[1]</a>.
 
 ## Cloudflare Workers
 
