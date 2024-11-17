@@ -96,7 +96,7 @@ _Use the `exit` command to log out, and run the SSH command shown earlier to log
 You can use the VM to deploy web applications built using any programming language or framework. Let's demonstrate this process for a web app built using [Next.js](https://nextjs.org/), a popular JavaScript framework. First, let's install [Node.js](https://nodejs.org/en) and [npm](https://www.npmjs.com/about) to enable JavaScript execution:
 
 ```bash
-# apt install nodejs npm
+# apt update && apt install nodejs npm
 ```
 
 Next, let's download the source code for a Next.js project using the [`git clone`](https://chatgpt.com/share/673851d0-a644-800a-8af4-c3a57e911f34) command:
