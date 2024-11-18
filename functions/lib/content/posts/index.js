@@ -6,7 +6,7 @@ import designPrinciplesContent from "./design-principles.md.txt";
 import shipOfTheseusContent from "./ship-of-theseus.md.txt";
 import howToWriteAFunctionContent from "./how-to-write-a-function.md.txt";
 import denoContent from "./switching-to-deno.md.txt";
-import jsxPart1Content from "./jsx-runtime-part-1.md.txt";
+import jsxRuntimeContent from "./jsx-runtime.md.txt";
 import deployWebAppContent from "./deploy-web-app-to-cloud-vm.md.txt";
 
 function extractTitle(content) {
@@ -33,11 +33,11 @@ export const posts = [
     content: extractBody(deployWebAppContent),
   },
   {
-    slug: "jsx-runtime-part-1",
+    slug: "jsx-runtime",
     author: "Aakash N S",
-    title: extractTitle(jsxPart1Content),
+    title: extractTitle(jsxRuntimeContent),
     date: "Oct 25, 2024",
-    content: extractBody(jsxPart1Content),
+    content: extractBody(jsxRuntimeContent),
   },
   {
     slug: "switching-to-deno",
