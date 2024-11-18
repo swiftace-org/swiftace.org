@@ -206,7 +206,7 @@ const VOID_TAGS = ["area", "base", "br", "col", "command",
   "meta", "param", "source", "track", "wbr"];
 ```
 
-We can now turn `app.js` into a web application that renders JSX to serve an HTML page:
+Finally, let's turn `app.js` into a web application that renders JSX and serves an HTML page:
 
 ```javascript
 // app.jsx
@@ -252,7 +252,7 @@ You can now open up the URL http://localhost:8000 in a browser to view the HTML 
 
 ![page-preview](https://i.imgur.com/x1TNa9l.png)
 
-And that's it! We've built a custom JSX runtime<sup>[[7]](#note-7)</sup> from scratch, including a function to turn JSX elements into a valid spec-compliant HTML string. We can use `renderToHtml` to generate HTML dynamically both on the server and within a browser.
+And that's it! We've built a custom JSX runtime<sup>[[7]](#note-7)</sup> from scratch, including a function to turn JSX elements into a valid spec-compliant HTML string. We can use `renderToHtml` to programmatically generate HTML on both the server and within a browser.
 
 I hope you found this introduction to building JSX runtimes useful.
 
@@ -270,4 +270,4 @@ I hope you found this introduction to building JSX runtimes useful.
 
 6. <a id="note-6"></a> If you're using [TypeScript](https://www.w3schools.com/typescript/typescript_getstarted.php) with Node.js, you can [configure](https://www.typescriptlang.org/tsconfig/#jsxImportSource) it using a `tsconfig.json` file. Similarly, ESBuild can be [configured](https://esbuild.github.io/content-types/#using-jsx-without-react) via command line arguments or `tsconfig.json`.
 
-7. <a id="note-7"></a> Our implementaion excludes features like [state](https://react.dev/learn/managing-state), [hooks](https://react.dev/reference/react/hooks), [keys](https://react.dev/learn/rendering-lists), etc. for creating dynamic and interactive UI elements, since we only use it to generate HTML strings. However, we should consider adding features like [`Fragment`](https://react.dev/reference/react/Fragment) and [`dangerouslySetInnerHtml`](https://react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html).
+7. <a id="note-7"></a> Our implementation excludes features like [state](https://react.dev/learn/managing-state), [hooks](https://react.dev/reference/react/hooks), [keys](https://react.dev/learn/rendering-lists), etc. for creating dynamic and interactive UI elements, since we only use it to generate HTML strings. However, we should consider adding features like [`Fragment`](https://react.dev/reference/react/Fragment) and [`dangerouslySetInnerHtml`](https://react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html).
