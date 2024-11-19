@@ -17,7 +17,7 @@ To get the most out of this tutorial, first follow along and deploy the included
 
 ## 1. Create an SSH Key Pair
 
-We'll use a command-line tool called [SSH (Secure Shell)](https://chatgpt.com/share/673822d3-b258-800a-9cb9-322103d5b813) to access and operate a cloud VM remotely from a local machine (e.g., your laptop). While we could log in to a cloud VM via SSH with just a username and password, using an [SSH key pair](https://chatgpt.com/share/6738240e-d6bc-800a-bfa0-13ed849501ae) is a much more secure method.
+We'll use a command-line tool called [SSH (Secure Shell)](https://chatgpt.com/share/673822d3-b258-800a-9cb9-322103d5b813) to access and operate a cloud VM remotely from a local machine (e.g., your laptop). While we can log in to a cloud VM via SSH with just a username and password, using an [SSH key pair](https://chatgpt.com/share/6738240e-d6bc-800a-bfa0-13ed849501ae) is a much more secure method.
 
 Let's generate a new SSH key pair on our local machine. Open up a new terminal on Linux, macOS, or [Windows WSL](https://learn.microsoft.com/en-us/windows/wsl/setup/environment) and run the following command (without the `$` at the start):
 
@@ -39,7 +39,7 @@ Two key files are created in `~/.ssh`: a private key `webapp` and a public key `
 
 ## 2. Rent a Cloud VM
 
-You can rent cloud VMs on platforms like [Hetzner Cloud](https://www.hetzner.com/cloud/) and [DigitalOcean](https://www.digitalocean.com/pricing/droplets) for under $5 per month. Even the cheapest VM on Hetzner (2 CPU cores, 4 GB RAM, and 40 GB disk space) can comfortably support up to 10,000 daily active users for a typical web application<sup>[[2]](#note-2)</sup>.
+Rent a cloud VM with at least 1 GB RAM on a platform like [Hetzner Cloud](https://www.hetzner.com/cloud/) or [DigitalOcean](https://www.digitalocean.com/pricing/droplets). The cheapest VM on Hetzner ($5 per month for 2 CPU cores, 4 GB RAM, and 40 GB disk space) can comfortably support up to 10,000 daily users for a typical web application<sup>[[2]](#note-2)</sup>.
 
 While configuring the VM, make sure to enable the assignment of a [public IPv4 address](https://chatgpt.com/share/67382d68-47b8-800a-839c-5c690d3fe1ed) and select "SSH Key" as the authentication method (instead of a "root" user password). To add your public SSH key to the VM, first run the following command on your local machine:
 
