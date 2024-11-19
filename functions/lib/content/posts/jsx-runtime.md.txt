@@ -152,7 +152,7 @@ Next, let's define a function `renderToHtml` to turn the output of our JSX runti
 export function renderToHtml(element) {
   if ([null, undefined, false].includes(element)) return ""; // Empty
   if (typeof element === "string") return escapeForHtml(element); // Text
-  if (typeof element === "number") return escapeForHtml(element); // Number
+  if (typeof element === "number") return element.toString(); // Number
   if (Array.isArray(element)) return element.map(jsxToStr).join(""); // List
 
   if (typeof element !== "object") throw Error("Element must be an object");
@@ -188,7 +188,7 @@ function attrsToStr(attrs) {
   const illegal = /[ "'>\/= \u0000-\u001F\uFDD0-\uFDEF\uFFFF\uFFFE]/;
   const result = Object.entries(attrs)
     .map(([key, value]) => {
-      if (!illegal.test(key)) {
+      if (illegal.test(key)) {
         throw Error(`Illegal attribute name: ${key}`);
       }
       if (value === true) return ` ${key}`; // Boolean (true)
