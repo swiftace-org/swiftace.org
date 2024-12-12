@@ -16,7 +16,7 @@ function HomePage() {
       </div>
 
       <div>
-        <h2 className="page-subheading">Development Log</h2>
+        <h2 className="page-subheading" id="devlog">Development Log</h2>
         {posts.map((post) => (
           <PostItem {...post} />
         ))}
