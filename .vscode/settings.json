@@ -4,5 +4,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.associations": {
     "*.md.txt": "markdown"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   }
 }

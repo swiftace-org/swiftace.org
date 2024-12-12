@@ -8,6 +8,7 @@ import howToWriteAFunctionContent from "./how-to-write-a-function.md.txt";
 import denoContent from "./switching-to-deno.md.txt";
 import jsxRuntimeContent from "./jsx-runtime.md.txt";
 import deployWebAppContent from "./deploy-web-app-to-cloud-vm.md.txt";
+import htmlInPureJsContent from './html-in-pure-javascript.md.txt';
 
 function extractTitle(content) {
   const firstLineBreak = content.indexOf("\n");
@@ -25,6 +26,13 @@ function extractBody(content) {
 }
 
 export const posts = [
+  {
+    slug: 'html-in-pure-javascript',
+    author: "Aakash N S",
+    title: extractTitle(htmlInPureJsContent),
+    date: "Nov 22, 2024",
+    content: extractBody(htmlInPureJsContent)
+  },
   {
     slug: "deploy-web-app-to-cloud-vm",
     author: "Aakash N S",
